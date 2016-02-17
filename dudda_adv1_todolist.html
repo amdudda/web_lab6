@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List Using JQuery</title>
+    <link href="dudda_adv1_style.css" rel="stylesheet" type="text/css" />
+    <!--download the jquery library; taken from examples in class -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#add_item").click(function() {
+                var newToDo = "<li class='toggleme'>" + $("#write_item").val() + "</li>";
+                $("#todo_list").append(newToDo);
+                // this is a bit weird, because it readds the function to every toggleme element, but 'twill do for now
+                $(".toggleme").click(function() {
+                    $(this).toggleClass("completed");
+                });
+            });
+            $("#rem_completed").click(function() {
+                // this doesn't work yet
+                $(".completed").remove();
+            });
+        });
+    </script>
+</head>
+<body>
+<h1>To-Do List</h1>
+
+    <fieldset name="thingstodo">
+        <input name="write_item" id="write_item" />
+        <button name="add_item" id="add_item">Add To-Do Item</button>
+    </fieldset>
+
+<ul id="todo_list">
+    <!-- items will be added dynamically-->
+</ul>
+<p>Remove completed items from list: <button name="rem_completed" id="rem_completed">Remove</button></p>
+</body>
+</html>
+<!--
+X Create a web page with an empty list, and an input box. You will use this to create a to do list. When you type something in the input box, it will be added to the list.
+
+X Decide on one style to represent items that are not done.
+
+X Decide on another style to represent items that you have done.  Create a style sheet for both of these styles.
+
+X When you click on one of the list items, it should toggle between done and not done. You should use the toggleClass method to add a class; so that the appropriate CSS style is applied.
+
+Add a button to remove the items you have done. When you click the button, all of the items that are done will be removed.
+-->

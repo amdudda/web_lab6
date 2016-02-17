@@ -1,0 +1,10 @@
+.toggleme {
+    color: red;
+    font-weight: bold;
+}
+
+/* this has to be second because completed needs to overwrite toggleme*/
+.completed {
+     color: blue;
+     font-weight: normal;
+ }
