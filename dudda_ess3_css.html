@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example Table</title>
+    <!--download the jquery library; taken from examples in class -->
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready( function() {
+// Use JQuery selectors to make the table headers purple;
+// and then the rows alternatively blue and green. (Or, use other colors of your choice).
+            $("th").css({"color":"purple","background":"paleaqua"});
+            $("tr:even").css({"background":"palegreen"});
+            $("tr:odd").css({"background":"aliceblue"});  // I use this color a lot.  I guess I like it?
+        });
+    </script>-->
+    <!--
+    Question 3a:
+    Can you create a striped table with just CSS? You can do it entirely in CSS: https://www.w3.org/Style/Examples/007/evenodd.en.html
+    -->
+    <style>
+        th {
+            color:purple;
+            background: aliceblue;
+        }
+        tr:nth-child(even) {
+            background: palegreen;
+        }
+        tr:nth-child(odd) {
+            background: aliceblue;
+        }
+    </style>
+</head>
+<body>
+<h1>Sample table: formatting with JQuery</h1>
+<h2>I'm into linguistics, so let's talk about uncommon phonemes in the world's languages.</h2>
+<table>
+    <tr>
+        <th>Phoneme</th><th>Language</th>
+    </tr>
+    <tr>
+        <td>alveolar fricative approximant</td><td>Czech</td>
+    </tr>
+    <tr>
+        <td>inwardly rounded mid front vowel</td><td>Swedish</td>
+    </tr>
+    <tr>
+        <td>retroflex lateral fricative</td><td>Toda</td>
+    </tr>
+    <tr>
+        <td>faucalized dental consonant</td><td>Korean</td>
+    </tr>
+    <tr>
+        <td>clawed dominant hand</td><td>American Sign Language</td>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example Table</title>
+<!--    &lt;!&ndash;download the jquery library; taken from examples in class &ndash;&gt;
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready( function() {
+// Use JQuery selectors to make the table headers purple;
+// and then the rows alternatively blue and green. (Or, use other colors of your choice).
+            $("th").css({"color":"purple","background":"paleaqua"});
+            $("tr:even").css({"background":"palegreen"});
+            $("tr:odd").css({"background":"aliceblue"});  // I use this color a lot.  I guess I like it?
+        });
+    </script>-->
+<!--
+    Question 3b:
+    Can you create a striped table with just JavaScript?
+    SEE END OF BODY for code
+-->
+</head>
+<body>
+<h1>Sample table: formatting with JQuery</h1>
+<h2>I'm into linguistics, so let's talk about uncommon phonemes in the world's languages.</h2>
+<table>
+    <tr>
+        <th>Phoneme</th>    <th>Language</th>
+    </tr>
+    <tr>
+        <td>alveolar fricative approximant</td> <td>Czech</td>
+    </tr>
+    <tr>
+        <td>inwardly rounded mid front vowel</td>   <td>Swedish</td>
+    </tr>
+    <tr>
+        <td>retroflex lateral fricative</td>    <td>Toda</td>
+    </tr>
+    <tr>
+        <td>faucalized dental consonant</td>    <td>Korean</td>
+    </tr>
+    <tr>
+        <td>clawed dominant hand</td>   <td>American Sign Language</td>
+    </tr>
+</table>
+
+<script>
+    // this applies styles using pure javascript
+    var tableheads = document.getElementsByTagName("th");
+    //console.log("th element count = " + tableheads.length);
+    for (var thorn = 0; thorn<tableheads.length; thorn++) {
+        th = tableheads[thorn];
+        th.style.color = "purple";
+        th.style.background = "aliceblue";
+    }
+    // var trs = document.getElementsByTagName("tr"); //:nth-child(odd)");
+    var odds = document.querySelectorAll("tr:nth-child(odd)");
+    var evens = document.querySelectorAll("tr:nth-child(even)");
+    console.log(odds.length);
+    for (var e=0; e<odds.length; e++) {
+        odds[e].style.background = "aliceblue";
+    }
+    for (var f=0; f<evens.length; f++) {
+        evens[f].style.background = "palegreen";
+    }
+</script>
+</body>
+</html>
