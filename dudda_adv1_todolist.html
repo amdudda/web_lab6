@@ -11,7 +11,8 @@
             $("#add_item").click(function() {
                 var newToDo = "<li class='toggleme'>" + $("#write_item").val() + "</li>";
                 $("#todo_list").append(newToDo);
-                // this is a bit weird, because it readds the function to every toggleme element, but 'twill do for now
+                // this is a bit weird, because it re-adds the function to every toggleme element, but 'twill do for now
+                // except it only works on some li elements and not others.
                 $(".toggleme").click(function() {
                     $(this).toggleClass("completed");
                 });
