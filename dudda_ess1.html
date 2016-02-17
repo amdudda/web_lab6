@@ -18,14 +18,23 @@
                 $(this).css({"background":"green"});
             });
 //            Hide the <p> elements when you hover over them with the mouse
-            $("p").hover(
+            /*$("p").hover(
                     function() {
                         $(this).hide();
                     },
                     function() {
                         $(this).show();
                     }
-            );
+            );*/
+//          revised question:  Make the <p> elements disappear when you hover over them with the mouse.
+            $("p").mouseover( function() {
+               $(this).detach();
+            });
+/* this doesn't actually bring it back
+           $("p").mousemove( function() {
+                $(this).append();
+            });*/
+
 //            When the id="make_h1_blue" button is clicked, make all of the H1 elements blue.
             $("#make_h1_blue").click( function() {
                 $("h1").css({"color": "blue"});
