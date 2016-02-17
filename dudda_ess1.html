@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- original file name is lab-5-q2.html -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 6, Question 1
+  <!-- old title: Lab 5, Question 2 -->
+  </title>
+    <!--download the jquery library; taken from examples in class -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready( function() {
+
+//            Make the <span> elements bold when the page loads
+            $("span").css({"font-weight":"bold"});
+//            Give the <h2> elements a green backgound when they are clicked on
+            $("h2").click(function() {
+                $(this).css({"background":"green"});
+            });
+//            Hide the <p> elements when you hover over them with the mouse
+            $("p").hover(
+                    function() {
+                        $(this).hide();
+                    },
+                    function() {
+                        $(this).show();
+                    }
+            );
+//            When the id="make_h1_blue" button is clicked, make all of the H1 elements blue.
+            $("#make_h1_blue").click( function() {
+                $("h1").css({"color": "blue"});
+            });
+//            When the id="remove_not_important" button is clicked, remove the li items with class = "not_important"
+            $("#remove_not_important").click( function() {
+                $(".not_important").remove();
+            });
+
+                    });
+    </script>
+
+</head>
+<body>
+
+<h1>JQuery Selector Practice</h1>
+
+<h2>Click on the H2 elements, like me, to give them a green background.</h2>
+
+<p>Hide me when the <span>mouse</span> hovers over me</p>
+
+<P>Hide me on mouseover too! <span>Make sure I come back</span> when the mouse moves elsewhere</P>
+
+<h1>A list of items</h1>
+
+<P>Some of these things are important, some are not</P>
+<ol>
+  <li class="not_important">First thing is not important</li>
+  <li class="not_important">Second thing is also not important</li>
+  <li>But, Third thing is <span>important</span></li>
+</ol>
+
+<h2>Buttons</h2>
+
+<button type="button" id="make_h1_blue">Make H1 items blue</button>
+
+<button type="button" id="remove_not_important">Remove not important items</button>
+</body>
+</html>
+
