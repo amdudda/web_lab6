@@ -13,7 +13,7 @@ table {
     border-collapse: collapse;
 }
 
-table tr, table th{
+table th, table td{
     /* adapted from http://stackoverflow.com/questions/1257430/css-border-only-inside-the-table */
     border: 1px solid blue;
     margin: 0;
