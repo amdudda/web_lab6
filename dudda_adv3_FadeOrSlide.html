@@ -21,7 +21,6 @@
             // this button removes items listed as completed
             $("#rem_completed").click(function () {
                 var completed_items = $(".completed");
-//                console.log(completed_items.length);
                 var completed_date = new Date().toLocaleDateString();  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
                 $(".completed").remove();
                 // and then moves them to the table with a completion date
@@ -63,7 +62,7 @@
 </body>
 </html>
 <!--
-Part 2: To Do List, save done items:
+Part 3: To Do List Animation:
 
-Start with Part 1. Add JQuery code so that when you click the remove button, add this list item (or items) to a table on the same page; with two columns: the text of the item, and the date that you marked it done.
+Use the previous program. Use fade or slide to animate the list items being deleted from the list and being added to the table.
 -->
