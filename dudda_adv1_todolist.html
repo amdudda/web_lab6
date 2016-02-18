@@ -8,17 +8,17 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
     <script>
         $(document).ready(function() {
+            // add items to the to do list and make them toggleable as they are added
             $("#add_item").click(function() {
                 var newToDo = "<li class='toggleme'>" + $("#write_item").val() + "</li>";
                 $("#todo_list").append(newToDo);
-                // this is a bit weird, because it re-adds the function to every toggleme element, but 'twill do for now
-                // except it only works on some li elements and not others.
-                $(".toggleme").click(function() {
+                // only need to add it to the last toggleme element - the others already have this event attached to them
+                $(".toggleme:last").click(function() {
                     $(this).toggleClass("completed");
                 });
             });
+            // this button removes items listed as completed
             $("#rem_completed").click(function() {
-                // this doesn't work yet
                 $(".completed").remove();
             });
         });
@@ -47,5 +47,5 @@ X Decide on another style to represent items that you have done.  Create a style
 
 X When you click on one of the list items, it should toggle between done and not done. You should use the toggleClass method to add a class; so that the appropriate CSS style is applied.
 
-Add a button to remove the items you have done. When you click the button, all of the items that are done will be removed.
+X Add a button to remove the items you have done. When you click the button, all of the items that are done will be removed.
 -->
