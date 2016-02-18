@@ -13,6 +13,7 @@
                 var newToDo = "<li class='toggleme'>" + $("#write_item").val() + "</li>";
                 $("#todo_list").append(newToDo);
                 // only need to add it to the last toggleme element - the others already have this event attached to them
+                // http://www.w3schools.com/jquery/sel_last.asp confirmed the existence of this in JQuery.
                 $(".toggleme:last").click(function() {
                     $(this).toggleClass("completed");
                 });
@@ -31,6 +32,7 @@
         <input name="write_item" id="write_item" />
         <button name="add_item" id="add_item">Add To-Do Item</button>
     </fieldset>
+<p>Click on an item in the list to mark it completed.  Text will change from bold red to normal blue.</p>
 
 <ul id="todo_list">
     <!-- items will be added dynamically-->
