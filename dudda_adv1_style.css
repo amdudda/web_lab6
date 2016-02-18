@@ -31,6 +31,7 @@ table th {
     padding-left: 10px;
 }
 
-.unsichtbar {
-    display: none;
+table tr td:nth-child(2){
+    /* this centers the dates in the table */
+    text-align: center;
 }

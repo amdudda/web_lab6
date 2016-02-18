@@ -22,18 +22,24 @@
             $("#rem_completed").click(function () {
                 var completed_items = $(".completed");
                 var completed_date = new Date().toLocaleDateString();  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-                $(".completed").fadeOut();
-                // and then moves them to the table with a completion date after waiting a second to let the fade happen
+                $(".completed").fadeOut(500);
+                // and then moves them to the table with a completion date after waiting for the fade to finish
                 setTimeout(function () {
                     for (var c = 0; c < completed_items.length; c++) {
                         // german variables to avoid keywords in variable names
-                        var neuesZelle1 = "<td>" + completed_items[c].innerText + "</td>";  // not sure why innerText works but text() doesn't.
-                        var neuesZelle2 = "<td>" + completed_date + "</td>";
+                        var neuesZelle1 = "<td><span class='fade'>" + completed_items[c].innerText + "</span></td>";  // not sure why innerText works but text() doesn't.
+                        var neuesZelle2 = "<td><span class='fade'>" + completed_date + "</span></td>";
                         var neuesReie = "<tr>" + neuesZelle1 + neuesZelle2 + "</tr>";
                         $("#finished").append(neuesReie);
                     }
+                    // need to remove elements after they've faded out so they doen't get re-added the next time user adds items.
                     $(".completed").remove();
-                }, 1000);
+                    // hide and slide down our new table rows, then remove the fade tag so only new table entries slide in.
+                    $(".fade").hide().slideDown(2000);
+                    $("span").removeClass("fade");
+                    // https://api.jquery.com/removeclass/
+                }, 500);
+
             });
         });
     </script>
