@@ -8,3 +8,25 @@
      color: blue;
      font-weight: normal;
  }
+
+table {
+    border-collapse: collapse;
+}
+
+table tr, table th{
+    /* adapted from http://stackoverflow.com/questions/1257430/css-border-only-inside-the-table */
+    border: 1px solid blue;
+    margin: 0;
+}
+
+table th:first-child {
+    /* sets the first column to be 300px wide at minimum*/
+    min-width: 300px;
+}
+
+table th {
+    /* and this applies to all th elements inside a table*/
+    color: blue;
+    padding-right: 10px;
+    padding-left: 10px;
+}
